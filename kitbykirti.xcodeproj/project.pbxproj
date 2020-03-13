@@ -1,0 +1,499 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		716BC89539A844D06501C3E0 /* Pods_kitbykirti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD0CDC5536B00473C5C5F82 /* Pods_kitbykirti.framework */; };
+		D10427D723F1AB44000FA5BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D10427CA23F1AB43000FA5BD /* Assets.xcassets */; };
+		D10427D823F1AB44000FA5BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D10427CB23F1AB43000FA5BD /* LaunchScreen.storyboard */; };
+		D10427D923F1AB44000FA5BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D10427CD23F1AB43000FA5BD /* Main.storyboard */; };
+		D10427DA23F1AB44000FA5BD /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10427D223F1AB43000FA5BD /* CalenderViewController.swift */; };
+		D10427DB23F1AB44000FA5BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10427D423F1AB43000FA5BD /* AppDelegate.swift */; };
+		D155788523F5BBBB006B9C9E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D155788423F5BBBB006B9C9E /* GoogleService-Info.plist */; };
+		D178048F240D57C800B9284A /* AddNotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D178048E240D57C800B9284A /* AddNotesVC.swift */; };
+		D1AABF8023F5C517008F3CD7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AABF7F23F5C517008F3CD7 /* LoginViewController.swift */; };
+		D1AABF8823F6E437008F3CD7 /* NotesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AABF8723F6E437008F3CD7 /* NotesListTableViewController.swift */; };
+		D1AABF8C23F6E633008F3CD7 /* NotesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AABF8B23F6E633008F3CD7 /* NotesItem.swift */; };
+		D1AABF8E23F6E6FF008F3CD7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AABF8D23F6E6FE008F3CD7 /* User.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		042FDE31BBA22A63F0825F46 /* Pods-kitbykirti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kitbykirti.debug.xcconfig"; path = "Target Support Files/Pods-kitbykirti/Pods-kitbykirti.debug.xcconfig"; sourceTree = "<group>"; };
+		2116109B76046F30DF12989A /* Pods-kitbykirti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kitbykirti.release.xcconfig"; path = "Target Support Files/Pods-kitbykirti/Pods-kitbykirti.release.xcconfig"; sourceTree = "<group>"; };
+		BCD0CDC5536B00473C5C5F82 /* Pods_kitbykirti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kitbykirti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D10427B223F1A93B000FA5BD /* kitbykirti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kitbykirti.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D10427C323F1A954000FA5BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D10427CA23F1AB43000FA5BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D10427CC23F1AB43000FA5BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D10427CE23F1AB43000FA5BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D10427D223F1AB43000FA5BD /* CalenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
+		D10427D423F1AB43000FA5BD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D155788423F5BBBB006B9C9E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D178048E240D57C800B9284A /* AddNotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotesVC.swift; sourceTree = "<group>"; };
+		D1AABF7F23F5C517008F3CD7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D1AABF8723F6E437008F3CD7 /* NotesListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesListTableViewController.swift; sourceTree = "<group>"; };
+		D1AABF8B23F6E633008F3CD7 /* NotesItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesItem.swift; sourceTree = "<group>"; };
+		D1AABF8D23F6E6FE008F3CD7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D10427AF23F1A93B000FA5BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				716BC89539A844D06501C3E0 /* Pods_kitbykirti.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22D7F594898BF9EA8378DA20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BCD0CDC5536B00473C5C5F82 /* Pods_kitbykirti.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49210CE5B236C66B10BF5DCA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				042FDE31BBA22A63F0825F46 /* Pods-kitbykirti.debug.xcconfig */,
+				2116109B76046F30DF12989A /* Pods-kitbykirti.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D10427A923F1A93B000FA5BD = {
+			isa = PBXGroup;
+			children = (
+				D10427B423F1A93B000FA5BD /* kitbykirti */,
+				D10427B323F1A93B000FA5BD /* Products */,
+				49210CE5B236C66B10BF5DCA /* Pods */,
+				22D7F594898BF9EA8378DA20 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D10427B323F1A93B000FA5BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D10427B223F1A93B000FA5BD /* kitbykirti.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D10427B423F1A93B000FA5BD /* kitbykirti */ = {
+			isa = PBXGroup;
+			children = (
+				D10427CF23F1AB43000FA5BD /* Cells */,
+				D10427D123F1AB43000FA5BD /* Controllers */,
+				D10427D023F1AB43000FA5BD /* Helpers */,
+				D10427D623F1AB43000FA5BD /* Models */,
+				D10427C923F1AB43000FA5BD /* Views */,
+				D10427C323F1A954000FA5BD /* Info.plist */,
+				D155788423F5BBBB006B9C9E /* GoogleService-Info.plist */,
+			);
+			path = kitbykirti;
+			sourceTree = "<group>";
+		};
+		D10427C923F1AB43000FA5BD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D10427CA23F1AB43000FA5BD /* Assets.xcassets */,
+				D10427CB23F1AB43000FA5BD /* LaunchScreen.storyboard */,
+				D10427CD23F1AB43000FA5BD /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D10427CF23F1AB43000FA5BD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D10427D023F1AB43000FA5BD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D10427D123F1AB43000FA5BD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D10427D223F1AB43000FA5BD /* CalenderViewController.swift */,
+				D1AABF7E23F5C517008F3CD7 /* Login */,
+				D10427D323F1AB43000FA5BD /* AppDelegate */,
+				D1AABF8623F6E437008F3CD7 /* Notes */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D10427D323F1AB43000FA5BD /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D10427D423F1AB43000FA5BD /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		D10427D623F1AB43000FA5BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D1AABF8B23F6E633008F3CD7 /* NotesItem.swift */,
+				D1AABF8D23F6E6FE008F3CD7 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D1AABF7E23F5C517008F3CD7 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D1AABF7F23F5C517008F3CD7 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D1AABF8623F6E437008F3CD7 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				D1AABF8723F6E437008F3CD7 /* NotesListTableViewController.swift */,
+				D178048E240D57C800B9284A /* AddNotesVC.swift */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D10427B123F1A93B000FA5BD /* kitbykirti */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D10427C623F1A954000FA5BD /* Build configuration list for PBXNativeTarget "kitbykirti" */;
+			buildPhases = (
+				9C0ED94628A7FCC4BEBE8216 /* [CP] Check Pods Manifest.lock */,
+				D10427AE23F1A93B000FA5BD /* Sources */,
+				D10427AF23F1A93B000FA5BD /* Frameworks */,
+				D10427B023F1A93B000FA5BD /* Resources */,
+				668D386A6425FF8810985D8A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = kitbykirti;
+			productName = kitbykirti;
+			productReference = D10427B223F1A93B000FA5BD /* kitbykirti.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D10427AA23F1A93B000FA5BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = Appy;
+				TargetAttributes = {
+					D10427B123F1A93B000FA5BD = {
+						CreatedOnToolsVersion = 11.3;
+					};
+				};
+			};
+			buildConfigurationList = D10427AD23F1A93B000FA5BD /* Build configuration list for PBXProject "kitbykirti" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D10427A923F1A93B000FA5BD;
+			productRefGroup = D10427B323F1A93B000FA5BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D10427B123F1A93B000FA5BD /* kitbykirti */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D10427B023F1A93B000FA5BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D10427D723F1AB44000FA5BD /* Assets.xcassets in Resources */,
+				D155788523F5BBBB006B9C9E /* GoogleService-Info.plist in Resources */,
+				D10427D923F1AB44000FA5BD /* Main.storyboard in Resources */,
+				D10427D823F1AB44000FA5BD /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		668D386A6425FF8810985D8A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kitbykirti/Pods-kitbykirti-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kitbykirti/Pods-kitbykirti-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kitbykirti/Pods-kitbykirti-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C0ED94628A7FCC4BEBE8216 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kitbykirti-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D10427AE23F1A93B000FA5BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1AABF8023F5C517008F3CD7 /* LoginViewController.swift in Sources */,
+				D1AABF8823F6E437008F3CD7 /* NotesListTableViewController.swift in Sources */,
+				D178048F240D57C800B9284A /* AddNotesVC.swift in Sources */,
+				D1AABF8E23F6E6FF008F3CD7 /* User.swift in Sources */,
+				D10427DA23F1AB44000FA5BD /* CalenderViewController.swift in Sources */,
+				D1AABF8C23F6E633008F3CD7 /* NotesItem.swift in Sources */,
+				D10427DB23F1AB44000FA5BD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D10427CB23F1AB43000FA5BD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D10427CC23F1AB43000FA5BD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D10427CD23F1AB43000FA5BD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D10427CE23F1AB43000FA5BD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D10427C423F1A954000FA5BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D10427C523F1A954000FA5BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D10427C723F1A954000FA5BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 042FDE31BBA22A63F0825F46 /* Pods-kitbykirti.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CBZE86VY6D;
+				INFOPLIST_FILE = kitbykirti/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.kitbykirti.com;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D10427C823F1A954000FA5BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2116109B76046F30DF12989A /* Pods-kitbykirti.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CBZE86VY6D;
+				INFOPLIST_FILE = kitbykirti/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.kitbykirti.com;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D10427AD23F1A93B000FA5BD /* Build configuration list for PBXProject "kitbykirti" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D10427C423F1A954000FA5BD /* Debug */,
+				D10427C523F1A954000FA5BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D10427C623F1A954000FA5BD /* Build configuration list for PBXNativeTarget "kitbykirti" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D10427C723F1A954000FA5BD /* Debug */,
+				D10427C823F1A954000FA5BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D10427AA23F1A93B000FA5BD /* Project object */;
+}
