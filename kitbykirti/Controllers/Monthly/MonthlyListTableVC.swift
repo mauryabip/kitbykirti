@@ -1,15 +1,14 @@
 //
-//  NotesListTableViewController.swift
+//  MonthlyListTableVC.swift
 //  kitbykirti
 //
-//  Created by Appy on 10/02/20.
+//  Created by UMENIT on 20/03/20.
 //  Copyright © 2020 Appy. All rights reserved.
 //
 
 import UIKit
-import Firebase
 
-class NotesListTableViewController: UITableViewController {
+class MonthlyListTableVC: UITableViewController {
     
     // MARK: Constants
     let listToUsers = "ListToUsers"
@@ -64,7 +63,7 @@ class NotesListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
         let notesItem = items[indexPath.row]
@@ -110,32 +109,7 @@ class NotesListTableViewController: UITableViewController {
         }
     }
     
-    // MARK: Add Item
-    @IBAction func addButtonDidTouch(_ sender: AnyObject) {
-        let alert = UIAlertController(title: "Notes",
-                                      message: "Add a note",
-                                      preferredStyle: .alert)
-        
-        let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
-            guard let textField = alert.textFields?.first,
-                let text = textField.text else { return }
-            let notesItem = NotesItem(name: text,
-                                      addedByUser: self.user.email,
-                                      completed: false)
-            let notesItemRef = self.ref.child(text.lowercased())
-            notesItemRef.setValue(notesItem.toAnyObject())
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel",
-                                         style: .cancel)
-        
-        alert.addTextField()
-        
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-        
-        present(alert, animated: true, completion: nil)
-    }
+    
     
     @objc func userCountButtonDidTouch() {
         self.navigationController?.dismiss(animated: true, completion: nil)

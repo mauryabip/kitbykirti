@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		716BC89539A844D06501C3E0 /* Pods_kitbykirti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD0CDC5536B00473C5C5F82 /* Pods_kitbykirti.framework */; };
+		A532AC95242522C500759C92 /* AddDaywiseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A532AC94242522C500759C92 /* AddDaywiseVC.swift */; };
+		A532AC972425253D00759C92 /* MonthlyListTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A532AC962425253D00759C92 /* MonthlyListTableVC.swift */; };
+		A532AC992425255200759C92 /* DayListTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A532AC982425255200759C92 /* DayListTableVC.swift */; };
 		A56F290D242521E4005043BB /* AddMonthlyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F290C242521E4005043BB /* AddMonthlyVC.swift */; };
 		A5DC030D241E1AC700E88F38 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC030C241E1AC700E88F38 /* BaseViewController.swift */; };
 		A5DC0311241E1ED100E88F38 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC0310241E1ED100E88F38 /* Toast.swift */; };
@@ -27,6 +30,9 @@
 /* Begin PBXFileReference section */
 		042FDE31BBA22A63F0825F46 /* Pods-kitbykirti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kitbykirti.debug.xcconfig"; path = "Target Support Files/Pods-kitbykirti/Pods-kitbykirti.debug.xcconfig"; sourceTree = "<group>"; };
 		2116109B76046F30DF12989A /* Pods-kitbykirti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kitbykirti.release.xcconfig"; path = "Target Support Files/Pods-kitbykirti/Pods-kitbykirti.release.xcconfig"; sourceTree = "<group>"; };
+		A532AC94242522C500759C92 /* AddDaywiseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDaywiseVC.swift; sourceTree = "<group>"; };
+		A532AC962425253D00759C92 /* MonthlyListTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyListTableVC.swift; sourceTree = "<group>"; };
+		A532AC982425255200759C92 /* DayListTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayListTableVC.swift; sourceTree = "<group>"; };
 		A56F290C242521E4005043BB /* AddMonthlyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMonthlyVC.swift; sourceTree = "<group>"; };
 		A5DC030C241E1AC700E88F38 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A5DC0310241E1ED100E88F38 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
@@ -85,6 +91,8 @@
 		A56F2906242520BA005043BB /* Day */ = {
 			isa = PBXGroup;
 			children = (
+				A532AC94242522C500759C92 /* AddDaywiseVC.swift */,
+				A532AC982425255200759C92 /* DayListTableVC.swift */,
 			);
 			path = Day;
 			sourceTree = "<group>";
@@ -93,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				A56F290C242521E4005043BB /* AddMonthlyVC.swift */,
+				A532AC962425253D00759C92 /* MonthlyListTableVC.swift */,
 			);
 			path = Monthly;
 			sourceTree = "<group>";
@@ -341,10 +350,13 @@
 				D178048F240D57C800B9284A /* AddNotesVC.swift in Sources */,
 				D1AABF8E23F6E6FF008F3CD7 /* User.swift in Sources */,
 				A56F290D242521E4005043BB /* AddMonthlyVC.swift in Sources */,
+				A532AC992425255200759C92 /* DayListTableVC.swift in Sources */,
 				D10427DA23F1AB44000FA5BD /* CalenderViewController.swift in Sources */,
 				A5DC030D241E1AC700E88F38 /* BaseViewController.swift in Sources */,
+				A532AC972425253D00759C92 /* MonthlyListTableVC.swift in Sources */,
 				D1AABF8C23F6E633008F3CD7 /* NotesItem.swift in Sources */,
 				A5DC0311241E1ED100E88F38 /* Toast.swift in Sources */,
+				A532AC95242522C500759C92 /* AddDaywiseVC.swift in Sources */,
 				D10427DB23F1AB44000FA5BD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
