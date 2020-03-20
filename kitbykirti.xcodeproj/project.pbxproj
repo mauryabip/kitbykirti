@@ -11,6 +11,8 @@
 		A532AC95242522C500759C92 /* AddDaywiseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A532AC94242522C500759C92 /* AddDaywiseVC.swift */; };
 		A532AC972425253D00759C92 /* MonthlyListTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A532AC962425253D00759C92 /* MonthlyListTableVC.swift */; };
 		A532AC992425255200759C92 /* DayListTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A532AC982425255200759C92 /* DayListTableVC.swift */; };
+		A532AC9B2425342000759C92 /* MontlyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A532AC9A2425342000759C92 /* MontlyItem.swift */; };
+		A532AC9D24253BF400759C92 /* DayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A532AC9C24253BF400759C92 /* DayItem.swift */; };
 		A56F290D242521E4005043BB /* AddMonthlyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F290C242521E4005043BB /* AddMonthlyVC.swift */; };
 		A5DC030D241E1AC700E88F38 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC030C241E1AC700E88F38 /* BaseViewController.swift */; };
 		A5DC0311241E1ED100E88F38 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC0310241E1ED100E88F38 /* Toast.swift */; };
@@ -33,6 +35,8 @@
 		A532AC94242522C500759C92 /* AddDaywiseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDaywiseVC.swift; sourceTree = "<group>"; };
 		A532AC962425253D00759C92 /* MonthlyListTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyListTableVC.swift; sourceTree = "<group>"; };
 		A532AC982425255200759C92 /* DayListTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayListTableVC.swift; sourceTree = "<group>"; };
+		A532AC9A2425342000759C92 /* MontlyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontlyItem.swift; sourceTree = "<group>"; };
+		A532AC9C24253BF400759C92 /* DayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayItem.swift; sourceTree = "<group>"; };
 		A56F290C242521E4005043BB /* AddMonthlyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMonthlyVC.swift; sourceTree = "<group>"; };
 		A5DC030C241E1AC700E88F38 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A5DC0310241E1ED100E88F38 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
@@ -206,6 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				D1AABF8B23F6E633008F3CD7 /* NotesItem.swift */,
+				A532AC9A2425342000759C92 /* MontlyItem.swift */,
+				A532AC9C24253BF400759C92 /* DayItem.swift */,
 				D1AABF8D23F6E6FE008F3CD7 /* User.swift */,
 			);
 			path = Models;
@@ -356,7 +362,9 @@
 				A532AC972425253D00759C92 /* MonthlyListTableVC.swift in Sources */,
 				D1AABF8C23F6E633008F3CD7 /* NotesItem.swift in Sources */,
 				A5DC0311241E1ED100E88F38 /* Toast.swift in Sources */,
+				A532AC9B2425342000759C92 /* MontlyItem.swift in Sources */,
 				A532AC95242522C500759C92 /* AddDaywiseVC.swift in Sources */,
+				A532AC9D24253BF400759C92 /* DayItem.swift in Sources */,
 				D10427DB23F1AB44000FA5BD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,7 +521,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = app.kitbykirti.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "kitbykirti/Controllers/Monthly/kitbykirti-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -536,7 +544,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = app.kitbykirti.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "kitbykirti/Controllers/Monthly/kitbykirti-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

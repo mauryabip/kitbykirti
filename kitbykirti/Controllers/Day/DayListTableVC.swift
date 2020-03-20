@@ -7,84 +7,106 @@
 //
 
 import UIKit
+import Firebase
 
 class DayListTableVC: UITableViewController {
-
+    
+    // MARK: Constants
+    let listToUsers = "ListToUsers"
+    
+    // MARK: Properties
+    var items: [DayItem] = []
+    var user: User!
+    let ref = Database.database().reference(withPath: "DayList")
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.allowsMultipleSelectionDuringEditing = false
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 60
+        let userCountBarButtonItem: UIBarButtonItem! = UIBarButtonItem(image: UIImage.init(named: "backArrow"), style: .plain, target: self, action: #selector(userCountButtonDidTouch))
+        navigationItem.leftBarButtonItem = userCountBarButtonItem
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        Auth.auth().addStateDidChangeListener { auth, user in
+            guard let user = user else { return }
+            self.user = User(authData: user)
+        }
+        ref.queryOrdered(byChild: "addedByUser").queryEqual(toValue: UserDefaults.standard.object(forKey: "EMAIL")).observe(.value) { snapshot in
+            var newItems: [DayItem] = []
+            for child in snapshot.children {
+                if let snapshot = child as? DataSnapshot,
+                    let notesItem = DayItem(snapshot: snapshot) {
+                    newItems.append(notesItem)
+                }
+            }
+            
+            self.items = newItems
+            self.tableView.reloadData()
+        }
+        
+        
     }
-
+    
+    // MARK: UITableView Delegate methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return items.count
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+        let notesItem = items[indexPath.row]
+        
+        cell.textLabel?.text = notesItem.notesStr
+        cell.detailTextLabel?.text = "\(notesItem.addedByUser)\n\n\(notesItem.notesDay)"
+        
+        toggleCellCheckbox(cell, isCompleted: true)
+        
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
+    
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
-
-    /*
-    // Override to support editing the table view.
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            let notesItem = items[indexPath.row]
+            notesItem.ref?.removeValue()
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) else { return }
+        //let notesItem = items[indexPath.row]
+        toggleCellCheckbox(cell, isCompleted: true)
+//        notesItem.ref?.updateChildValues([
+//            "completed": toggledCompletion
+//        ])
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    func toggleCellCheckbox(_ cell: UITableViewCell, isCompleted: Bool) {
+        cell.accessoryType = .none
+        cell.textLabel?.textColor = .black
+        cell.detailTextLabel?.textColor = .black
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    
+    @objc func userCountButtonDidTouch() {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+        // performSegue(withIdentifier: listToUsers, sender: nil)
     }
-    */
-
 }

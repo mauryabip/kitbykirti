@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MonthlyListTableVC: UITableViewController {
     
@@ -14,9 +15,9 @@ class MonthlyListTableVC: UITableViewController {
     let listToUsers = "ListToUsers"
     
     // MARK: Properties
-    var items: [NotesItem] = []
+    var items: [MontlyItem] = []
     var user: User!
-    let ref = Database.database().reference(withPath: "NotesList")
+    let ref = Database.database().reference(withPath: "MonthlyList")
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -28,7 +29,7 @@ class MonthlyListTableVC: UITableViewController {
         tableView.allowsMultipleSelectionDuringEditing = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 60
-        let userCountBarButtonItem: UIBarButtonItem! = UIBarButtonItem(image: UIImage.init(named: "backArrow"), style: .plain, target: #selector(userCountButtonDidTouch), action: self)
+        let userCountBarButtonItem: UIBarButtonItem! = UIBarButtonItem(image: UIImage.init(named: "backArrow"), style: .plain, target: self, action: #selector(userCountButtonDidTouch))
         navigationItem.leftBarButtonItem = userCountBarButtonItem
     }
     
@@ -40,10 +41,10 @@ class MonthlyListTableVC: UITableViewController {
             self.user = User(authData: user)
         }
         ref.queryOrdered(byChild: "addedByUser").queryEqual(toValue: UserDefaults.standard.object(forKey: "EMAIL")).observe(.value) { snapshot in
-            var newItems: [NotesItem] = []
+            var newItems: [MontlyItem] = []
             for child in snapshot.children {
                 if let snapshot = child as? DataSnapshot,
-                    let notesItem = NotesItem(snapshot: snapshot) {
+                    let notesItem = MontlyItem(snapshot: snapshot) {
                     newItems.append(notesItem)
                 }
             }
@@ -68,10 +69,10 @@ class MonthlyListTableVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
         let notesItem = items[indexPath.row]
         
-        cell.textLabel?.text = notesItem.name
-        cell.detailTextLabel?.text = notesItem.addedByUser
+        cell.textLabel?.text = notesItem.notesStr
+        cell.detailTextLabel?.text = "\(notesItem.addedByUser)\n\n\(notesItem.notesMonth)"
         
-        toggleCellCheckbox(cell, isCompleted: notesItem.completed)
+        toggleCellCheckbox(cell, isCompleted: true)
         
         return cell
     }
@@ -89,24 +90,17 @@ class MonthlyListTableVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) else { return }
-        let notesItem = items[indexPath.row]
-        let toggledCompletion = !notesItem.completed
-        toggleCellCheckbox(cell, isCompleted: toggledCompletion)
-        notesItem.ref?.updateChildValues([
-            "completed": toggledCompletion
-        ])
+        //let notesItem = items[indexPath.row]
+        toggleCellCheckbox(cell, isCompleted: true)
+//        notesItem.ref?.updateChildValues([
+//            "completed": toggledCompletion
+//        ])
     }
     
     func toggleCellCheckbox(_ cell: UITableViewCell, isCompleted: Bool) {
-        if !isCompleted {
-            cell.accessoryType = .none
-            cell.textLabel?.textColor = .black
-            cell.detailTextLabel?.textColor = .black
-        } else {
-            cell.accessoryType = .checkmark
-            cell.textLabel?.textColor = .gray
-            cell.detailTextLabel?.textColor = .gray
-        }
+        cell.accessoryType = .none
+        cell.textLabel?.textColor = .black
+        cell.detailTextLabel?.textColor = .black
     }
     
     

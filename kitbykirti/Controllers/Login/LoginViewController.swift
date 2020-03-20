@@ -11,6 +11,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var textFieldLoginEmail: UITextField!
     @IBOutlet weak var textFieldLoginPassword: UITextField!
     
+    @IBOutlet weak var upperView: UIView!
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -25,6 +26,8 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: self.loginToCalender, sender: nil)
                 self.textFieldLoginEmail.text = nil
                 self.textFieldLoginPassword.text = nil
+            } else {
+                self.upperView.isHidden = true
             }
         }
     }
@@ -39,8 +42,9 @@ class LoginViewController: UIViewController {
             else {
                 return
         }
-        
+        SVProgressHUD.show()
         Auth.auth().signIn(withEmail: email, password: password) { user, error in
+            SVProgressHUD.dismiss()
             if let error = error, user == nil {
                 let alert = UIAlertController(title: "Sign In Failed",
                                               message: error.localizedDescription,
@@ -62,8 +66,9 @@ class LoginViewController: UIViewController {
             
             let emailField = alert.textFields![0]
             let passwordField = alert.textFields![1]
-            
+            SVProgressHUD.show()
             Auth.auth().createUser(withEmail: emailField.text!, password: passwordField.text!) { user, error in
+                SVProgressHUD.dismiss()
                 if error == nil {
                     Auth.auth().signIn(withEmail: self.textFieldLoginEmail.text!,
                                        password: self.textFieldLoginPassword.text!)

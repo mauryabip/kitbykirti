@@ -17,6 +17,7 @@ class NotesListTableViewController: UITableViewController {
     // MARK: Properties
     var items: [NotesItem] = []
     var user: User!
+    var userCountBarButtonItem: UIBarButtonItem!
     let ref = Database.database().reference(withPath: "NotesList")
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -29,7 +30,7 @@ class NotesListTableViewController: UITableViewController {
         tableView.allowsMultipleSelectionDuringEditing = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 60
-        let userCountBarButtonItem: UIBarButtonItem! = UIBarButtonItem(image: UIImage.init(named: "backArrow"), style: .plain, target: #selector(userCountButtonDidTouch), action: self)
+        userCountBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "backArrow"), style: .plain, target: self, action: #selector(userCountButtonDidTouch))
         navigationItem.leftBarButtonItem = userCountBarButtonItem
     }
     
@@ -69,7 +70,7 @@ class NotesListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
         let notesItem = items[indexPath.row]
         
-        cell.textLabel?.text = notesItem.name
+        cell.textLabel?.text = notesItem.notesStr
         cell.detailTextLabel?.text = notesItem.addedByUser
         
         toggleCellCheckbox(cell, isCompleted: notesItem.completed)
@@ -119,9 +120,7 @@ class NotesListTableViewController: UITableViewController {
         let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
             guard let textField = alert.textFields?.first,
                 let text = textField.text else { return }
-            let notesItem = NotesItem(name: text,
-                                      addedByUser: self.user.email,
-                                      completed: false)
+            let notesItem = NotesItem(notesStr: text, addedByUser: self.user.email,completed: false, addedTimestamp: Int(NSDate().timeIntervalSince1970))
             let notesItemRef = self.ref.child(text.lowercased())
             notesItemRef.setValue(notesItem.toAnyObject())
         }

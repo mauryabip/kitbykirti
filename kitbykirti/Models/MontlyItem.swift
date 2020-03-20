@@ -1,29 +1,29 @@
 //
-//  NotesItem.swift
+//  MontlyItem.swift
 //  kitbykirti
 //
-//  Created by Appy on 10/02/20.
+//  Created by UMENIT on 20/03/20.
 //  Copyright © 2020 Appy. All rights reserved.
 //
 
 import Foundation
 import Firebase
 
-struct NotesItem {
+struct MontlyItem {
     
     let ref: DatabaseReference?
     let key: String
     let notesStr: String
+    let notesMonth: String
     let addedByUser: String
-    var completed: Bool
     let addedTimestamp: Int
     
-    init(notesStr: String, addedByUser: String, completed: Bool, key: String = "", addedTimestamp: Int) {
+    init(notesStr: String, addedByUser: String, notesMonth: String, key: String = "", addedTimestamp: Int) {
         self.ref = nil
         self.key = key
         self.notesStr = notesStr
         self.addedByUser = addedByUser
-        self.completed = completed
+        self.notesMonth = notesMonth
         self.addedTimestamp = addedTimestamp
     }
     
@@ -32,7 +32,7 @@ struct NotesItem {
             let value = snapshot.value as? [String: AnyObject],
             let notesStr = value["notesStr"] as? String,
             let addedByUser = value["addedByUser"] as? String,
-            let completed = value["completed"] as? Bool,
+            let notesMonth = value["notesMonth"] as? String,
             let addedTimestamp = value["addedTimestamp"] as? Int else {
                 return nil
         }
@@ -41,7 +41,7 @@ struct NotesItem {
         self.key = snapshot.key
         self.notesStr = notesStr
         self.addedByUser = addedByUser
-        self.completed = completed
+        self.notesMonth = notesMonth
         self.addedTimestamp = addedTimestamp
     }
     
@@ -49,7 +49,7 @@ struct NotesItem {
         return [
             "notesStr": notesStr,
             "addedByUser": addedByUser,
-            "completed": completed,
+            "notesMonth": notesMonth,
             "addedTimestamp": addedTimestamp
         ]
     }

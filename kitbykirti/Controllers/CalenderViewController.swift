@@ -13,6 +13,9 @@ import Firebase
 class CalenderViewController: UIViewController {
     // MARK: Constants
     let noteToNoteslist = "NoteToNoteslist"
+    let noteToMonthlylist = "NoteToMonthlylist"
+    let noteToWeeklist = "NoteToWeeklist"
+    let noteToDaylist = "NoteToDaylist"
     
     @IBOutlet weak var monthsImgView: UIImageView!
     @IBOutlet weak var monthHeaderView: VAMonthHeaderView! {
@@ -99,9 +102,29 @@ class CalenderViewController: UIViewController {
     }
     
     // MARK: Button Actions
-    @IBAction func allButtonDidTouch(_ sender: AnyObject) {
-        performSegue(withIdentifier: noteToNoteslist, sender: nil)
+    @IBAction func allButtonDidTouch(_ sender: UIButton) {
+        switch sender.tag {
+        case 100:
+            performSegue(withIdentifier: noteToDaylist, sender: sender)
+            break
+        case 101:
+            performSegue(withIdentifier: noteToWeeklist, sender: sender)
+            break
+        case 102:
+            performSegue(withIdentifier: noteToMonthlylist, sender: sender)
+            break
+        default:
+            performSegue(withIdentifier: noteToNoteslist, sender: sender)
+            break
+        }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == noteToDaylist{
+            //var vc = segue.destination as! DayListTableVC
+            //vc.data = "Data you want to pass"
+        }
+    }
+    
     
 }
 
@@ -184,6 +207,13 @@ extension CalenderViewController: VACalendarViewDelegate {
     
     func selectedDates(_ dates: [Date]) {
         calendarView.startDate = dates.last ?? Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM"
+        UserDefaults.standard.set(dateFormatter.string(from: calendarView.startDate).lowercased(), forKey: "MONTHNAME")
+        
+        let dateFormatter1 = DateFormatter()
+        dateFormatter1.dateFormat = "EEEE"
+        UserDefaults.standard.set(dateFormatter1.string(from: calendarView.startDate).lowercased(), forKey: "DAYNAME")
         print(dates)
     }
     
@@ -193,6 +223,11 @@ extension CalenderViewController: VACalendarMonthDelegate {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM"
         UserDefaults.standard.set(dateFormatter.string(from: currentMonth).lowercased(), forKey: "MONTHNAME")
+        
+        let dateFormatter1 = DateFormatter()
+        dateFormatter1.dateFormat = "EEEE"
+        UserDefaults.standard.set(dateFormatter1.string(from: currentMonth).lowercased(), forKey: "DAYNAME")
+        
         let monthImgName = "\(dateFormatter.string(from: currentMonth).lowercased())month"
         self.monthsImgView.image = UIImage.init(named: monthImgName)
     }
