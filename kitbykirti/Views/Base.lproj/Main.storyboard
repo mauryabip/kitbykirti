@@ -16,18 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AugustMonths" translatesAutoresizingMaskIntoConstraints="NO" id="Ke1-Dp-qCz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="augmonth" translatesAutoresizingMaskIntoConstraints="NO" id="Ke1-Dp-qCz">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91w-qB-6q4" customClass="VAMonthHeaderView" customModule="VACalendar">
-                                <rect key="frame" x="0.0" y="100" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="xlG-hF-58W"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2x6-ah-7xf" customClass="VAWeekDaysView" customModule="VACalendar">
-                                <rect key="frame" x="0.0" y="150" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="qYM-dQ-auN"/>
@@ -145,7 +145,7 @@
                             <constraint firstItem="Ke1-Dp-qCz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RfU-He-00c"/>
                             <constraint firstItem="2x6-ah-7xf" firstAttribute="top" secondItem="91w-qB-6q4" secondAttribute="bottom" id="SYw-mv-C83"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wig-Qo-XmR" secondAttribute="trailing" id="TIm-30-Dit"/>
-                            <constraint firstItem="91w-qB-6q4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="VCG-OL-N5f"/>
+                            <constraint firstItem="91w-qB-6q4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VCG-OL-N5f"/>
                             <constraint firstItem="Wig-Qo-XmR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VSB-XI-z19"/>
                             <constraint firstItem="yN6-W8-NOB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-15" id="h2v-17-5ZO"/>
                             <constraint firstItem="Ke1-Dp-qCz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="rqn-Vj-u5W"/>
@@ -156,6 +156,7 @@
                     <navigationItem key="navigationItem" id="60h-gc-nel"/>
                     <connections>
                         <outlet property="monthHeaderView" destination="91w-qB-6q4" id="PZh-Sb-8Mk"/>
+                        <outlet property="monthsImgView" destination="Ke1-Dp-qCz" id="453-ax-8rM"/>
                         <outlet property="weekDaysView" destination="2x6-ah-7xf" id="jtd-zC-nrR"/>
                     </connections>
                 </viewController>
@@ -307,7 +308,7 @@
         <scene sceneID="oBB-d5-52U">
             <objects>
                 <tableViewController title="Notes List" id="gOb-Px-cU5" customClass="NotesListTableViewController" customModule="kitbykirti" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="oni-Av-JQi">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="22" sectionFooterHeight="22" id="oni-Av-JQi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="660"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -320,7 +321,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6tt-8X-LIj">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6tt-8X-LIj">
                                             <rect key="frame" x="20" y="6.6666666666666661" width="35" height="24.666666666666668"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
@@ -347,7 +348,7 @@
                     <navigationItem key="navigationItem" title="Notes List" id="Sky-Zg-1Sc">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="XkX-4h-CI0">
                             <connections>
-                                <action selector="addButtonDidTouch:" destination="gOb-Px-cU5" id="4O8-m8-u2b"/>
+                                <segue destination="pBo-Fk-hbT" kind="push" id="lDj-Hy-YjX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -355,6 +356,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hTd-JX-v5Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2610" y="302"/>
+        </scene>
+        <!--Add Notes-->
+        <scene sceneID="Ezg-6q-dxM">
+            <objects>
+                <viewController storyboardIdentifier="AddNotesVC" id="pBo-Fk-hbT" customClass="AddNotesVC" customModule="kitbykirti" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B0b-7s-HO5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="660"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="octnotes" translatesAutoresizingMaskIntoConstraints="NO" id="Q3p-VC-AZH">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="660"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wTI-BU-FI9">
+                                <rect key="frame" x="30" y="170" width="354" height="270"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pBo-Fk-hbT" id="JPP-E3-cyg"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Q3p-VC-AZH" firstAttribute="bottom" secondItem="E9l-KV-A8f" secondAttribute="bottom" id="Fjl-cb-ig9"/>
+                            <constraint firstItem="E9l-KV-A8f" firstAttribute="trailing" secondItem="wTI-BU-FI9" secondAttribute="trailing" constant="30" id="Kec-uo-Cby"/>
+                            <constraint firstItem="wTI-BU-FI9" firstAttribute="top" secondItem="E9l-KV-A8f" secondAttribute="top" constant="170" id="RAd-8x-Is1"/>
+                            <constraint firstItem="wTI-BU-FI9" firstAttribute="leading" secondItem="E9l-KV-A8f" secondAttribute="leading" constant="30" id="SBl-f3-ihr"/>
+                            <constraint firstItem="Q3p-VC-AZH" firstAttribute="top" secondItem="E9l-KV-A8f" secondAttribute="top" id="Xsh-Q5-nyO"/>
+                            <constraint firstItem="Q3p-VC-AZH" firstAttribute="leading" secondItem="E9l-KV-A8f" secondAttribute="leading" id="ete-u8-9Xv"/>
+                            <constraint firstItem="Q3p-VC-AZH" firstAttribute="trailing" secondItem="E9l-KV-A8f" secondAttribute="trailing" id="hsc-8d-SoT"/>
+                            <constraint firstItem="E9l-KV-A8f" firstAttribute="bottom" secondItem="wTI-BU-FI9" secondAttribute="bottom" constant="220" id="vfc-NG-9UN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="E9l-KV-A8f"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Notes" id="PmR-b5-W0V">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="BOk-Bm-hY3">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="I8q-Zu-Qbq">
+                                <rect key="frame" x="348" y="13" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addNotesBtnAction:" destination="pBo-Fk-hbT" eventType="touchUpInside" id="pdG-bY-9Dc"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="monthNoteImageView" destination="Q3p-VC-AZH" id="LOt-9s-l6m"/>
+                        <outlet property="txtView" destination="wTI-BU-FI9" id="0JG-we-3kE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FmI-2y-Wrp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3408.6956521739135" y="301.63043478260875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Q6h-vO-CNM">
@@ -383,6 +440,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AugustMonths" width="976" height="1741"/>
+        <image name="augmonth" width="976" height="1741"/>
+        <image name="octnotes" width="1071" height="1917"/>
     </resources>
 </document>

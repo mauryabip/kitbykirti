@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		716BC89539A844D06501C3E0 /* Pods_kitbykirti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD0CDC5536B00473C5C5F82 /* Pods_kitbykirti.framework */; };
+		A5DC030D241E1AC700E88F38 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC030C241E1AC700E88F38 /* BaseViewController.swift */; };
+		A5DC0311241E1ED100E88F38 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC0310241E1ED100E88F38 /* Toast.swift */; };
 		D10427D723F1AB44000FA5BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D10427CA23F1AB43000FA5BD /* Assets.xcassets */; };
 		D10427D823F1AB44000FA5BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D10427CB23F1AB43000FA5BD /* LaunchScreen.storyboard */; };
 		D10427D923F1AB44000FA5BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D10427CD23F1AB43000FA5BD /* Main.storyboard */; };
@@ -24,6 +26,8 @@
 /* Begin PBXFileReference section */
 		042FDE31BBA22A63F0825F46 /* Pods-kitbykirti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kitbykirti.debug.xcconfig"; path = "Target Support Files/Pods-kitbykirti/Pods-kitbykirti.debug.xcconfig"; sourceTree = "<group>"; };
 		2116109B76046F30DF12989A /* Pods-kitbykirti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kitbykirti.release.xcconfig"; path = "Target Support Files/Pods-kitbykirti/Pods-kitbykirti.release.xcconfig"; sourceTree = "<group>"; };
+		A5DC030C241E1AC700E88F38 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A5DC0310241E1ED100E88F38 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		BCD0CDC5536B00473C5C5F82 /* Pods_kitbykirti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kitbykirti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D10427B223F1A93B000FA5BD /* kitbykirti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kitbykirti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D10427C323F1A954000FA5BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,6 +73,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A5DC030E241E1ED100E88F38 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				A5DC030F241E1ED100E88F38 /* Toast */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		A5DC030F241E1ED100E88F38 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				A5DC0310241E1ED100E88F38 /* Toast.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
 		D10427A923F1A93B000FA5BD = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +115,7 @@
 				D10427D023F1AB43000FA5BD /* Helpers */,
 				D10427D623F1AB43000FA5BD /* Models */,
 				D10427C923F1AB43000FA5BD /* Views */,
+				A5DC030E241E1ED100E88F38 /* ThirdParty */,
 				D10427C323F1A954000FA5BD /* Info.plist */,
 				D155788423F5BBBB006B9C9E /* GoogleService-Info.plist */,
 			);
@@ -128,6 +149,7 @@
 		D10427D123F1AB43000FA5BD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A5DC030C241E1AC700E88F38 /* BaseViewController.swift */,
 				D10427D223F1AB43000FA5BD /* CalenderViewController.swift */,
 				D1AABF7E23F5C517008F3CD7 /* Login */,
 				D10427D323F1AB43000FA5BD /* AppDelegate */,
@@ -291,7 +313,9 @@
 				D178048F240D57C800B9284A /* AddNotesVC.swift in Sources */,
 				D1AABF8E23F6E6FF008F3CD7 /* User.swift in Sources */,
 				D10427DA23F1AB44000FA5BD /* CalenderViewController.swift in Sources */,
+				A5DC030D241E1AC700E88F38 /* BaseViewController.swift in Sources */,
 				D1AABF8C23F6E633008F3CD7 /* NotesItem.swift in Sources */,
+				A5DC0311241E1ED100E88F38 /* Toast.swift in Sources */,
 				D10427DB23F1AB44000FA5BD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

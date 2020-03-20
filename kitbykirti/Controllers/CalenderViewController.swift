@@ -14,6 +14,7 @@ class CalenderViewController: UIViewController {
     // MARK: Constants
     let noteToNoteslist = "NoteToNoteslist"
     
+    @IBOutlet weak var monthsImgView: UIImageView!
     @IBOutlet weak var monthHeaderView: VAMonthHeaderView! {
         didSet {
             let dateFormatter = DateFormatter()
@@ -58,6 +59,7 @@ class CalenderViewController: UIViewController {
         calendarView.dayViewAppearanceDelegate = self
         calendarView.monthViewAppearanceDelegate = self
         calendarView.calendarDelegate = self
+        calendarView.monthDelegate = self
         calendarView.scrollDirection = .horizontal
         calendarView.setSupplementaries([
             (Date().addingTimeInterval(-(60 * 60 * 70)), [VADaySupplementary.bottomDots([.red, .magenta])]),
@@ -186,5 +188,13 @@ extension CalenderViewController: VACalendarViewDelegate {
     }
     
 }
-
+extension CalenderViewController: VACalendarMonthDelegate {
+    func monthDidChange(_ currentMonth: Date) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM"
+        UserDefaults.standard.set(dateFormatter.string(from: currentMonth).lowercased(), forKey: "MONTHNAME")
+        let monthImgName = "\(dateFormatter.string(from: currentMonth).lowercased())month"
+        self.monthsImgView.image = UIImage.init(named: monthImgName)
+    }
+}
 

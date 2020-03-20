@@ -19,7 +19,6 @@ class NotesListTableViewController: UITableViewController {
     var user: User!
     var userCountBarButtonItem: UIBarButtonItem!
     let ref = Database.database().reference(withPath: "NotesList")
-    let usersRef = Database.database().reference(withPath: "online")
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -28,16 +27,21 @@ class NotesListTableViewController: UITableViewController {
     // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.allowsMultipleSelectionDuringEditing = false
-        
-        userCountBarButtonItem = UIBarButtonItem(title: "<",
-                                                 style: .plain,
-                                                 target: self,
-                                                 action: #selector(userCountButtonDidTouch))
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 60
+        userCountBarButtonItem = UIBarButtonItem(title: "<", style: .plain, target: self, action: #selector(userCountButtonDidTouch))
         userCountBarButtonItem.tintColor = UIColor.white
         navigationItem.leftBarButtonItem = userCountBarButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         
+        Auth.auth().addStateDidChangeListener { auth, user in
+            guard let user = user else { return }
+            self.user = User(authData: user)
+        }
         ref.queryOrdered(byChild: "addedByUser").queryEqual(toValue: UserDefaults.standard.object(forKey: "EMAIL")).observe(.value) { snapshot in
             var newItems: [NotesItem] = []
             for child in snapshot.children {
@@ -50,36 +54,8 @@ class NotesListTableViewController: UITableViewController {
             self.items = newItems
             self.tableView.reloadData()
         }
-//        ref.queryOrdered(byChild: "addedByUser").observe(.value, with: { snapshot in
-//            var newItems: [NotesItem] = []
-//            for child in snapshot.children {
-//                if let snapshot = child as? DataSnapshot,
-//                    let notesItem = NotesItem(snapshot: snapshot) {
-//                    newItems.append(notesItem)
-//                }
-//            }
-//
-//            self.items = newItems
-//            self.tableView.reloadData()
-//        })
         
-        Auth.auth().addStateDidChangeListener { auth, user in
-            guard let user = user else { return }
-            self.user = User(authData: user)
-            
-            let currentUserRef = self.usersRef.child(self.user.uid)
-            currentUserRef.setValue(self.user.email)
-            currentUserRef.onDisconnectRemoveValue()
-        }
-        /*
-         usersRef.observe(.value, with: { snapshot in
-             if snapshot.exists() {
-                 self.userCountBarButtonItem?.title = snapshot.childrenCount.description
-             } else {
-                 self.userCountBarButtonItem?.title = "0"
-             }
-         })
-         */
+        
     }
     
     // MARK: UITableView Delegate methods
@@ -87,6 +63,10 @@ class NotesListTableViewController: UITableViewController {
         return items.count
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
         let notesItem = items[indexPath.row]
